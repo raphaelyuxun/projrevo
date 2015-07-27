@@ -101,7 +101,7 @@
 
 
 	// module
-	exports.push([module.id, ".vertical-divider {\n  border-right: #e9e9e9 1px solid;\n}\n.signup-login-content {\n  background-image: url(\"http://www.samsung-wallpapers.com/uploads/allimg/131025/1-131025103112.jpg\");\n  background-size: cover;\n}\n.signup-login-content .signup-form {\n  margin-top: 25%;\n  background: transparent;\n}\n.signup-login-content .login-form {\n  margin-top: 25%;\n  background: transparent;\n}\n.hidden {\n  display: none;\n}\n", ""]);
+	exports.push([module.id, ".vertical-divider {\n  border-right: #e9e9e9 1px solid;\n}\n.signup-login-content {\n  background-image: url(\"http://www.samsung-wallpapers.com/uploads/allimg/131025/1-131025103112.jpg\");\n  background-size: cover;\n}\n.signup-login-content .signup-form {\n  margin-top: 25%;\n  background: transparent;\n}\n.signup-login-content .login-form {\n  margin-top: 25%;\n  background: transparent;\n}\n.signup-login-content label {\n  background-color: rgba(255, 255, 255, 0.8);\n}\n.signup-login-content .button {\n  opacity: 0.8;\n}\n.hidden {\n  display: none;\n}\n", ""]);
 
 	// exports
 

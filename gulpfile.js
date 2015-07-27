@@ -42,6 +42,10 @@ gulp.task('watch', function() {
   return gulp.watch(['www/app/**/*.*'], ['build'])
 })
 
+gulp.task('upload', function() {
+  sh.exec('ionic upload')
+})
+
 gulp.task('ionic-serve', function(done) {
   if (!sh.which('ionic')) {
     console.log(
