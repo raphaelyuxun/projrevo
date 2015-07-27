@@ -53,7 +53,7 @@
 	// angular.module is a global place for creating, registering and retrieving Angular modules
 	// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 	// the 2nd parameter is an array of 'requires'
-	angular.module('starter', ['ionic']).run(function ($ionicPlatform) {
+	angular.module('app', ['ionic']).run(function ($ionicPlatform) {
 	  $ionicPlatform.ready(function () {
 	    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 	    // for form inputs)
@@ -101,7 +101,7 @@
 
 
 	// module
-	exports.push([module.id, ".vertical-divider {\n  border-right: #e9e9e9 1px solid;\n}\n", ""]);
+	exports.push([module.id, ".vertical-divider {\n  border-right: #e9e9e9 1px solid;\n}\n.signup-login-content {\n  background-image: url(\"http://www.samsung-wallpapers.com/uploads/allimg/131025/1-131025103112.jpg\");\n  background-size: cover;\n}\n.signup-login-content .signup-form {\n  margin-top: 25%;\n  background: transparent;\n}\n.signup-login-content .login-form {\n  margin-top: 25%;\n  background: transparent;\n}\n.hidden {\n  display: none;\n}\n", ""]);
 
 	// exports
 

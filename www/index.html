@@ -21,12 +21,35 @@
     <!-- your app's js -->
     <script src="build/bundle.js"></script>
   </head>
-  <body ng-app="starter">
+  <body ng-app="app">
     <ion-pane>
       <ion-header-bar class="bar-calm">
         <h1 class="title">projrevo </h1>
       </ion-header-bar>
-      <ion-content>
+      <ion-content class="signup-login-content">
+        <div class="list list-inset signup-form">
+          <label class="item item-input">
+            <input type="text" placeholder="Username">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Password">
+          </label>
+          <button class="button button-full button-calm">
+            Signup
+          </button>
+        </div>
+
+        <div class="list list-inset login-form hidden">
+          <label class="item item-input">
+            <input type="text" placeholder="Username">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Password">
+          </label>
+          <button class="button button-full button-calm">
+            Login
+          </button>
+        </div>
 
       </ion-content>
       <div class="bar bar-footer">
@@ -34,7 +57,7 @@
           <div class="col footer-btn">
             login
           </div>
-          <div class='vertical-divider'> </div>
+          <div class="vertical-divider"> </div>
           <div class="col footer-btn">
             signup
           </div>
