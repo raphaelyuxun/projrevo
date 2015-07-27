@@ -19,7 +19,7 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
+    <script src="build/bundle.js"></script>
   </head>
   <body ng-app="starter">
     <ion-pane>
@@ -30,8 +30,15 @@
 
       </ion-content>
       <div class="bar bar-footer">
-        <button class="button button-clear">Left</button>
-        <button class="button button-clear">Right</button>
+        <div class="row">
+          <div class="col footer-btn">
+            login
+          </div>
+          <div class='vertical-divider'> </div>
+          <div class="col footer-btn">
+            signup
+          </div>
+        </div>
       </div>
     </ion-pane>
   </body>
