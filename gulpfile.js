@@ -4,6 +4,8 @@ var bower = require('bower')
 var sh = require('shelljs')
 var watch = require('gulp-watch')
 var webpack = require('webpack-stream')
+var plumber = require('gulp-plumber')
+
 var webpackConfig = require('./webpack.config.js')
 
 /*
@@ -14,7 +16,8 @@ var webpackConfig = require('./webpack.config.js')
 */
 gulp.task('build', function() {
   return gulp
-          .src('www/app/app.js')
+          .src('www/app/app.jsx')
+          .pipe(plumber())
           .pipe(webpack(webpackConfig))
           .pipe(gulp.dest('www/build/'))
 })
