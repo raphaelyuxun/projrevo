@@ -1,68 +1,53 @@
 <!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js -->
-    <script src="build/bundle.js"></script>
-  </head>
-  <body ng-app="app">
-    <ion-pane>
-      <ion-header-bar class="bar-calm">
-        <h1 class="title">projrevo </h1>
-      </ion-header-bar>
-      <ion-content class="signup-login-content">
-        <div class="list list-inset signup-form">
-          <label class="item item-input">
-            <input type="text" placeholder="Username">
-          </label>
-          <label class="item item-input">
-            <input type="password" placeholder="Password">
-          </label>
-          <button class="button button-full button-calm">
-            Signup
-          </button>
+        <title> Projrevo </title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
         </div>
+        <!-- bootstrap -->
+        <script type="text/javascript" src="./components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="./components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-        <div class="list list-inset login-form hidden">
-          <label class="item item-input">
-            <input type="text" placeholder="Username">
-          </label>
-          <label class="item item-input">
-            <input type="password" placeholder="Password">
-          </label>
-          <button class="button button-full button-calm">
-            Login
-          </button>
-        </div>
+        <!-- cordova -->
+        <script type="text/javascript" src="cordova.js"></script>
 
-      </ion-content>
-      <div class="bar bar-footer">
-        <div class="row">
-          <div class="col footer-btn">
-            login
-          </div>
-          <div class="vertical-divider"> </div>
-          <div class="col footer-btn">
-            signup
-          </div>
-        </div>
-      </div>
-    </ion-pane>
-  </body>
+        <!-- my application -->
+        <script type="text/javascript" src="build/bundle.js"></script>
+    </body>
 </html>

@@ -1,7 +1,20 @@
 {
-  "name": "HelloIonic",
-  "private": "true",
-  "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.0.1"
+  "name": "projrevo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/raphaelyuxun/projrevo",
+  "authors": [
+    "Yiyi Wang <shd101wyy@sina.com>"
+  ],
+  "description": "project revo",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
   }
 }
