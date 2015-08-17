@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "unslider": "~1.0.0"
   }
 }

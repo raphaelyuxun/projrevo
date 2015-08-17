@@ -74,6 +74,10 @@
 
 	var _pagesLogin_signupLogin_signupJsx2 = _interopRequireDefault(_pagesLogin_signupLogin_signupJsx);
 
+	var _pagesBird_pageBird_pageJsx = __webpack_require__(215);
+
+	var _pagesBird_pageBird_pageJsx2 = _interopRequireDefault(_pagesBird_pageBird_pageJsx);
+
 	var DefaultRoute = _reactRouter2['default'].DefaultRoute,
 	    Link = _reactRouter2['default'].Link,
 	    Route = _reactRouter2['default'].Route,
@@ -114,6 +118,7 @@
 	  { name: 'app', path: '/', handler: App },
 	  _react2['default'].createElement(Route, { name: 'home', handler: _pagesHomeHomeJsx2['default'] }),
 	  _react2['default'].createElement(Route, { name: 'login_signup', handler: _pagesLogin_signupLogin_signupJsx2['default'] }),
+	  _react2['default'].createElement(Route, { name: 'bird', handler: _pagesBird_pageBird_pageJsx2['default'] }),
 	  _react2['default'].createElement(DefaultRoute, { handler: _pagesHomeHomeJsx2['default'] })
 	);
 
@@ -23643,7 +23648,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  width: 100%;\n  height: 100%;\n}\n.app {\n  width: 100%;\n  height: 100%;\n  color: #222;\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  width: 100%;\n  height: 100%;\n}\n.app {\n  width: 100%;\n  height: 100%;\n  color: #222;\n}\n.clearfix {\n  *zoom: 1;\n}\n.clearfix:before,\n.clearfix:after {\n  display: table;\n  content: \"\";\n  line-height: 0;\n}\n.clearfix:after {\n  clear: both;\n}\n", ""]);
 
 	// exports
 
@@ -24001,20 +24006,20 @@
 	        _react2['default'].createElement(
 	          'div',
 	          { className: 'birds-list' },
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
-	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null)
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' })
 	        ),
 	        _react2['default'].createElement(
 	          _commonBottom_nav_barBottom_nav_barJsx2['default'],
@@ -24094,7 +24099,7 @@
 
 
 	// module
-	exports.push([module.id, ".home {\n  height: 100%;\n}\n.home .birds-list {\n  position: fixed;\n  width: 100%;\n  height: calc(100% - 48px);\n  overflow: scroll;\n  background-color: #fefefe;\n}\n", ""]);
+	exports.push([module.id, ".home {\n  width: 100%;\n  height: 100%;\n}\n.home .birds-list {\n  position: fixed;\n  width: 100%;\n  height: calc(100% - 48px);\n  overflow-y: scroll;\n  background-color: #fefefe;\n}\n", ""]);
 
 	// exports
 
@@ -24342,87 +24347,96 @@
 	  value: true
 	});
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(157);
+
+	var _reactRouter2 = _interopRequireDefault(_reactRouter);
+
 	__webpack_require__(210);
 
-	var BirdItem = (function (_React$Component) {
-	  _inherits(BirdItem, _React$Component);
+	var Navigation = _reactRouter2['default'].Navigation;
 
-	  function BirdItem(props) {
-	    _classCallCheck(this, BirdItem);
+	var BirdItem = _react2['default'].createClass({
+	  displayName: 'BirdItem',
 
-	    _get(Object.getPrototypeOf(BirdItem.prototype), 'constructor', this).call(this, props);
-	  }
+	  mixins: [Navigation],
 
-	  _createClass(BirdItem, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2['default'].createElement(
+	  propTypes: {
+	    chineseName: _react2['default'].PropTypes.string,
+	    latinName: _react2['default'].PropTypes.string,
+	    englishName: _react2['default'].PropTypes.string,
+	    birdImage: _react2['default'].PropTypes.string
+	  },
+
+	  render: function render() {
+	    var chineseName = this.props.chineseName,
+	        latinName = this.props.latinName,
+	        englishName = this.props.englishName,
+	        birdImage = this.props.birdImage;
+	    return _react2['default'].createElement(
+	      'div',
+	      { className: 'bird-item', onClick: this.showDetails, onTouchStart: this.showDetails },
+	      _react2['default'].createElement(
 	        'div',
-	        { className: 'bird-item' },
+	        { className: 'wrapper' },
 	        _react2['default'].createElement(
 	          'div',
-	          { className: 'wrapper' },
+	          { className: 'introduction' },
 	          _react2['default'].createElement(
-	            'div',
-	            { className: 'introduction' },
-	            _react2['default'].createElement(
-	              'p',
-	              { className: 'name' },
-	              ' 丹顶鹤 '
-	            ),
-	            _react2['default'].createElement(
-	              'p',
-	              { className: 'latin' },
-	              ' 拉丁学名: ',
-	              _react2['default'].createElement(
-	                'span',
-	                { className: 'content' },
-	                ' Grus japonensis '
-	              ),
-	              ' '
-	            ),
-	            _react2['default'].createElement(
-	              'p',
-	              { className: 'english' },
-	              ' 英文名:  ',
-	              _react2['default'].createElement(
-	                'span',
-	                { className: 'content' },
-	                ' Manchurian Crane '
-	              ),
-	              ' '
-	            )
+	            'p',
+	            { className: 'name' },
+	            ' ',
+	            chineseName,
+	            ' '
 	          ),
 	          _react2['default'].createElement(
-	            'div',
-	            { className: 'image' },
-	            _react2['default'].createElement('img', { src: '../www/img/1.jpg' })
+	            'p',
+	            { className: 'latin' },
+	            ' 拉丁学名: ',
+	            _react2['default'].createElement(
+	              'span',
+	              { className: 'content' },
+	              ' ',
+	              latinName,
+	              ' '
+	            ),
+	            ' '
+	          ),
+	          _react2['default'].createElement(
+	            'p',
+	            { className: 'english' },
+	            ' 英文名:  ',
+	            _react2['default'].createElement(
+	              'span',
+	              { className: 'content' },
+	              ' ',
+	              englishName,
+	              ' '
+	            ),
+	            ' '
 	          )
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'image' },
+	          _react2['default'].createElement('img', { src: '../www/img/' + birdImage })
 	        )
-	      );
-	    }
-	  }]);
+	      )
+	    );
+	  },
 
-	  return BirdItem;
-	})(_react2['default'].Component);
+	  showDetails: function showDetails() {
+	    alert('clicked');
+	    this.transitionTo('bird', { englishName: this.props.englishName });
+	  }
+	});
 
 	exports['default'] = BirdItem;
-
-	BirdItem.propTypes = {};
 	module.exports = exports['default'];
 
 /***/ },
@@ -24460,7 +24474,7 @@
 
 
 	// module
-	exports.push([module.id, ".bird-item {\n  width: 100%;\n  height: 80px;\n  margin: 5px 0;\n  padding: 0 10px;\n}\n.bird-item:nth-child(1) {\n  margin-top: 54px;\n}\n.bird-item .wrapper {\n  width: 100%;\n  height: 100%;\n  border: 2px solid #F4F4F4;\n  background-color: #fff;\n  -webkit-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  -moz-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  box-shadow: 0px 0px 15px 0px #f3f3f3;\n}\n.bird-item .wrapper .introduction {\n  float: left;\n  width: calc(100% - 80px);\n  height: 100%;\n}\n.bird-item .wrapper .introduction .name {\n  font-size: 18px;\n  margin: 8px 0 3px 20px;\n  color: #1C92CC;\n  font-weight: 600;\n}\n.bird-item .wrapper .introduction .latin,\n.bird-item .wrapper .introduction .english {\n  font-size: 12px;\n  color: #999;\n  margin-left: 20px;\n  margin-bottom: 0;\n}\n.bird-item .wrapper .introduction .latin .content,\n.bird-item .wrapper .introduction .english .content {\n  color: #666;\n}\n.bird-item .wrapper .introduction .latin .content {\n  font-style: italic;\n}\n.bird-item .wrapper .image {\n  float: left;\n  width: 80px;\n  height: 100%;\n  background-color: red;\n}\n.bird-item .wrapper .image img {\n  width: 100%;\n  height: 100%;\n}\n", ""]);
+	exports.push([module.id, ".bird-item {\n  width: 100%;\n  height: 80px;\n  margin: 5px 0;\n  padding: 0 10px;\n}\n.bird-item:nth-child(1) {\n  margin-top: 54px;\n}\n.bird-item .wrapper {\n  width: 100%;\n  height: 100%;\n  border: 2px solid #F4F4F4;\n  background-color: #fff;\n  -webkit-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  -moz-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  box-shadow: 0px 0px 15px 0px #f3f3f3;\n}\n.bird-item .wrapper .introduction {\n  float: left;\n  width: calc(100% - 80px);\n  height: 100%;\n}\n.bird-item .wrapper .introduction .name {\n  font-size: 18px;\n  margin: 8px 0 3px 20px;\n  color: #1C92CC;\n  font-weight: 600;\n}\n.bird-item .wrapper .introduction .latin,\n.bird-item .wrapper .introduction .english {\n  font-size: 12px;\n  color: #999;\n  margin-left: 20px;\n  margin-bottom: 0;\n}\n.bird-item .wrapper .introduction .latin .content,\n.bird-item .wrapper .introduction .english .content {\n  color: #666;\n}\n.bird-item .wrapper .introduction .latin .content {\n  font-style: italic;\n}\n.bird-item .wrapper .image {\n  float: left;\n  width: 80px;\n  height: 100%;\n}\n.bird-item .wrapper .image img {\n  width: 100%;\n  height: 100%;\n}\n", ""]);
 
 	// exports
 
@@ -24553,6 +24567,409 @@
 
 	// module
 	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(216);
+
+	var _commonTop_nav_barTop_nav_barJsx = __webpack_require__(218);
+
+	var _commonTop_nav_barTop_nav_barJsx2 = _interopRequireDefault(_commonTop_nav_barTop_nav_barJsx);
+
+	var _commonBird_detailBird_detailJsx = __webpack_require__(221);
+
+	var _commonBird_detailBird_detailJsx2 = _interopRequireDefault(_commonBird_detailBird_detailJsx);
+
+	var BirdPage = (function (_React$Component) {
+	  _inherits(BirdPage, _React$Component);
+
+	  function BirdPage(props) {
+	    _classCallCheck(this, BirdPage);
+
+	    _get(Object.getPrototypeOf(BirdPage.prototype), 'constructor', this).call(this, props);
+	  }
+
+	  _createClass(BirdPage, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'bird-page' },
+	        _react2['default'].createElement(
+	          _commonTop_nav_barTop_nav_barJsx2['default'],
+	          { transparent: true },
+	          ' '
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'content' },
+	          _react2['default'].createElement(
+	            _commonBird_detailBird_detailJsx2['default'],
+	            null,
+	            ' '
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return BirdPage;
+	})(_react2['default'].Component);
+
+	exports['default'] = BirdPage;
+	module.exports = exports['default'];
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(217);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(199)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./bird_page.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./bird_page.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(198)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".bird-page {\n  width: 100%;\n  height: 100%;\n}\n.bird-page .content {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(219);
+
+	var TopNavBar = (function (_React$Component) {
+	  _inherits(TopNavBar, _React$Component);
+
+	  function TopNavBar(props) {
+	    _classCallCheck(this, TopNavBar);
+
+	    _get(Object.getPrototypeOf(TopNavBar.prototype), 'constructor', this).call(this, props);
+	  }
+
+	  _createClass(TopNavBar, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: "top-navbar" + (this.props.transparent ? ' transparent' : '') },
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'back-btn' },
+	          _react2['default'].createElement('i', { className: 'fa fa-chevron-left' })
+	        ),
+	        this.props.transparent ? null : _react2['default'].createElement(
+	          'div',
+	          { className: 'page-name' },
+	          ' ',
+	          this.props.pageName,
+	          ' '
+	        )
+	      );
+	    }
+	  }]);
+
+	  return TopNavBar;
+	})(_react2['default'].Component);
+
+	exports['default'] = TopNavBar;
+
+	TopNavBar.propTypes = {
+	  pageName: _react2['default'].PropTypes.string,
+	  transparent: _react2['default'].PropTypes.bool
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(220);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(199)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./top_nav_bar.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./top_nav_bar.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(198)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".top-navbar {\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 48px;\n  background-color: #fff;\n  border-bottom: 1px solid #E8E8E8;\n  text-align: center;\n  z-index: 99;\n}\n.top-navbar .back-btn {\n  position: fixed;\n  width: 48px;\n  height: 48px;\n}\n.top-navbar .back-btn i {\n  color: #A9A9A9;\n  font-size: 20px;\n  margin-top: 14px;\n}\n.top-navbar.transparent {\n  background-color: rgba(101, 99, 99, 0.2);\n  border-bottom: none;\n}\n.top-navbar.transparent .back-btn {\n  background-color: rgba(28, 28, 28, 0.8);\n}\n.top-navbar.transparent .back-btn i {\n  color: #F5F5F5;\n}\n.top-navbar .page-name {\n  font-size: 18px;\n  color: #666;\n  margin-top: 8px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(222);
+
+	var BirdDetail = (function (_React$Component) {
+	  _inherits(BirdDetail, _React$Component);
+
+	  function BirdDetail(props) {
+	    _classCallCheck(this, BirdDetail);
+
+	    _get(Object.getPrototypeOf(BirdDetail.prototype), 'constructor', this).call(this, props);
+
+	    this.swipeDebounce = 0;
+	  }
+
+	  _createClass(BirdDetail, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var slider = $('.bird-images').unslider({
+	        speed: 250, //  The speed to animate each slide (in milliseconds)
+	        delay: 0, //  The delay between slide animations (in milliseconds)
+	        complete: function complete() {}, //  A function that gets called after every slide animation
+	        keys: true, //  Enable keyboard (left, right) arrow shortcuts
+	        dots: false, //  Display dot navigation
+	        fluid: false //  Support responsive design. May break non-responsive designs
+	      });
+	      this.sliderData = slider.data('unslider');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'bird-detail' },
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'bird-images' },
+	          _react2['default'].createElement(
+	            'ul',
+	            { onTouchMove: this.swipeImage.bind(this) },
+	            _react2['default'].createElement(
+	              'li',
+	              null,
+	              _react2['default'].createElement('img', { src: '../www/img/1.jpg' })
+	            ),
+	            _react2['default'].createElement(
+	              'li',
+	              null,
+	              _react2['default'].createElement('img', { src: '../www/img/1.jpg' })
+	            ),
+	            _react2['default'].createElement(
+	              'li',
+	              null,
+	              _react2['default'].createElement('img', { src: '../www/img/1.jpg' })
+	            )
+	          )
+	        ),
+	        _react2['default'].createElement('div', { className: 'introduction' })
+	      );
+	    }
+	  }, {
+	    key: 'leftImage',
+	    value: function leftImage() {
+	      if (this.sliderData) {
+	        this.sliderData.prev();
+	      }
+	    }
+	  }, {
+	    key: 'rightImage',
+	    value: function rightImage() {
+	      if (this.sliderData) {
+	        this.sliderData.next();
+	      }
+	    }
+	  }, {
+	    key: 'swipeImage',
+	    value: function swipeImage(e) {
+	      var touch = e.nativeEvent.touches[0];
+	      if (!this.previousX) {
+	        this.previousX = touch.pageX;
+	      } else {
+	        var delta = touch.pageX - this.previousX;
+	        this.previousX = touch.pageX;
+
+	        if (delta < 0) {
+	          // swipe left
+	          if (this.swipeDebounce > 0) {
+	            this.swipeDebounce = 0;
+	          } else {
+	            this.swipeDebounce--;
+	            if (this.swipeDebounce < -3) {
+	              this.swipeDebounce = 0;
+	              this.sliderData.next();
+	            }
+	          }
+	        } else {
+	          // swipe right
+	          if (this.swipeDebounce < 0) {
+	            this.swipeDebounce = 0;
+	          } else {
+	            this.swipeDebounce++;
+	            if (this.swipeDebounce > 3) {
+	              this.swipeDebounce = 0;
+	              this.sliderData.prev();
+	            }
+	          }
+	        }
+	      }
+	    }
+	  }]);
+
+	  return BirdDetail;
+	})(_react2['default'].Component);
+
+	exports['default'] = BirdDetail;
+
+	BirdDetail.propTypes = {};
+	module.exports = exports['default'];
+	/* 点击图片出现缩略图 */
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(223);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(199)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./bird_detail.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./bird_detail.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(198)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".bird-detail {\n  width: 100%;\n  height: 100%;\n  background-color: #fefefe;\n}\n.bird-detail .bird-images {\n  width: 100%;\n  height: 256px;\n  background-color: #CDCDCD;\n  position: relative;\n  overflow: auto;\n}\n.bird-detail .bird-images li {\n  list-style: none;\n}\n.bird-detail .bird-images ul {\n  padding: 0 !important;\n}\n.bird-detail .bird-images ul li {\n  float: left;\n}\n.bird-detail .bird-images ul li img {\n  width: 100%;\n  height: 256px;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n", ""]);
 
 	// exports
 

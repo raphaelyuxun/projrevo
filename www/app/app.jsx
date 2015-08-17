@@ -5,6 +5,7 @@ import './app.less'
 
 import Home from './pages/home/home.jsx'
 import LoginSignup from './pages/login_signup/login_signup.jsx'
+import BirdPage from './pages/bird_page/bird_page.jsx'
 
 let DefaultRoute = Router.DefaultRoute,
     Link = Router.Link,
@@ -34,6 +35,7 @@ let routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="home" handler={Home}/>
     <Route name="login_signup" handler={LoginSignup}/>
+    <Route name="bird" handler={BirdPage}/>
     <DefaultRoute handler={Home}/>
   </Route>
 )
