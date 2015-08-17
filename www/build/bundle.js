@@ -24431,7 +24431,6 @@
 	  },
 
 	  showDetails: function showDetails() {
-	    alert('clicked');
 	    this.transitionTo('bird', { englishName: this.props.englishName });
 	  }
 	});
@@ -24871,7 +24870,39 @@
 	            )
 	          )
 	        ),
-	        _react2['default'].createElement('div', { className: 'introduction' })
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'btns' },
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'btn' },
+	            _react2['default'].createElement(
+	              'span',
+	              null,
+	              ' 查看地图 '
+	            ),
+	            _react2['default'].createElement('i', { className: 'fa fa-map-o' })
+	          ),
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'btn' },
+	            _react2['default'].createElement(
+	              'span',
+	              null,
+	              ' 查看更多图片 '
+	            ),
+	            _react2['default'].createElement('i', { className: 'fa fa-picture-o' })
+	          )
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'introduction' },
+	          _react2['default'].createElement(
+	            'p',
+	            { className: 'name' },
+	            '丹顶鹤'
+	          )
+	        )
 	      );
 	    }
 	  }, {
@@ -24969,7 +25000,7 @@
 
 
 	// module
-	exports.push([module.id, ".bird-detail {\n  width: 100%;\n  height: 100%;\n  background-color: #fefefe;\n}\n.bird-detail .bird-images {\n  width: 100%;\n  height: 256px;\n  background-color: #CDCDCD;\n  position: relative;\n  overflow: auto;\n}\n.bird-detail .bird-images li {\n  list-style: none;\n}\n.bird-detail .bird-images ul {\n  padding: 0 !important;\n}\n.bird-detail .bird-images ul li {\n  float: left;\n}\n.bird-detail .bird-images ul li img {\n  width: 100%;\n  height: 256px;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n", ""]);
+	exports.push([module.id, ".bird-detail {\n  width: 100%;\n  height: 100%;\n  background-color: #fefefe;\n}\n.bird-detail .bird-images {\n  width: 100%;\n  height: 256px;\n  background-color: #CDCDCD;\n  position: relative;\n  overflow: auto;\n}\n.bird-detail .bird-images li {\n  list-style: none;\n}\n.bird-detail .bird-images ul {\n  padding: 0 !important;\n}\n.bird-detail .bird-images ul li {\n  float: left;\n}\n.bird-detail .bird-images ul li img {\n  width: 100%;\n  height: 256px;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.bird-detail .btns {\n  height: 36px;\n  text-align: center;\n  border-bottom: 1px solid #E4E4E4;\n}\n.bird-detail .btns .btn {\n  width: 50%;\n  border-radius: 0;\n  border-right: 1px solid #E4E4E4;\n  color: #444;\n}\n.bird-detail .introduction .name {\n  font-size: 26px;\n  margin: 8px 0 3px 20px;\n  color: #1C92CC;\n  font-weight: 600;\n}\n", ""]);
 
 	// exports
 

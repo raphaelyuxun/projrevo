@@ -38,7 +38,20 @@ export default class BirdDetail extends React.Component {
             </li>
           </ul>
         </div>
+        <div className="btns">
+          <div className="btn">
+            <span> 查看地图 </span>
+            <i className="fa fa-map-o"></i>
+          </div>
+          <div className="btn">
+            <span> 查看更多图片 </span>
+            <i className="fa fa-picture-o"></i>
+          </div>
+        </div>
         <div className="introduction">
+          <p className="name">
+            丹顶鹤
+          </p>
         </div>
       </div>
     )

@@ -37,7 +37,6 @@ let BirdItem = React.createClass({
   },
 
   showDetails() {
-    alert('clicked')
     this.transitionTo('bird', {englishName: this.props.englishName})
   }
 })
