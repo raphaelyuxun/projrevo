@@ -24840,6 +24840,10 @@
 	        fluid: false //  Support responsive design. May break non-responsive designs
 	      });
 	      this.sliderData = slider.data('unslider');
+
+	      setTimeout(function () {
+	        return $('.phote-swipe-hint').hide(800);
+	      }, 1500);
 	    }
 	  }, {
 	    key: 'render',
@@ -24902,6 +24906,11 @@
 	            { className: 'name' },
 	            '丹顶鹤'
 	          )
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'phote-swipe-hint' },
+	          '左右滑动来查看新的图片'
 	        )
 	      );
 	    }
@@ -25000,7 +25009,7 @@
 
 
 	// module
-	exports.push([module.id, ".bird-detail {\n  width: 100%;\n  height: 100%;\n  background-color: #fefefe;\n}\n.bird-detail .bird-images {\n  width: 100%;\n  height: 256px;\n  background-color: #CDCDCD;\n  position: relative;\n  overflow: auto;\n}\n.bird-detail .bird-images li {\n  list-style: none;\n}\n.bird-detail .bird-images ul {\n  padding: 0 !important;\n}\n.bird-detail .bird-images ul li {\n  float: left;\n}\n.bird-detail .bird-images ul li img {\n  width: 100%;\n  height: 256px;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.bird-detail .btns {\n  height: 36px;\n  text-align: center;\n  border-bottom: 1px solid #E4E4E4;\n}\n.bird-detail .btns .btn {\n  width: 50%;\n  border-radius: 0;\n  border-right: 1px solid #E4E4E4;\n  color: #444;\n}\n.bird-detail .introduction .name {\n  font-size: 26px;\n  margin: 8px 0 3px 20px;\n  color: #1C92CC;\n  font-weight: 600;\n}\n", ""]);
+	exports.push([module.id, ".bird-detail {\n  width: 100%;\n  height: 100%;\n  background-color: #fefefe;\n}\n.bird-detail .bird-images {\n  width: 100%;\n  height: 256px;\n  background-color: #CDCDCD;\n  position: relative;\n  overflow: auto;\n}\n.bird-detail .bird-images li {\n  list-style: none;\n}\n.bird-detail .bird-images ul {\n  padding: 0 !important;\n}\n.bird-detail .bird-images ul li {\n  float: left;\n}\n.bird-detail .bird-images ul li img {\n  width: 100%;\n  height: 256px;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.bird-detail .btns {\n  height: 36px;\n  text-align: center;\n  border-bottom: 1px solid #E4E4E4;\n}\n.bird-detail .btns .btn {\n  width: 50%;\n  border-radius: 0;\n  border-right: 1px solid #E4E4E4;\n  color: #444;\n}\n.bird-detail .introduction .name {\n  font-size: 26px;\n  margin: 8px 0 3px 20px;\n  color: #1C92CC;\n  font-weight: 600;\n}\n.bird-detail .phote-swipe-hint {\n  position: absolute;\n  top: 211px;\n  right: 5px;\n  padding: 6px;\n  background-color: #2C2B2B;\n  color: #fff;\n  border-radius: 8px;\n  box-shadow: 0px 0px 5px 0px #242424;\n}\n", ""]);
 
 	// exports
 

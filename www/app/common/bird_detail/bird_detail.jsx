@@ -19,6 +19,8 @@ export default class BirdDetail extends React.Component {
     	fluid: false              //  Support responsive design. May break non-responsive designs
     })
     this.sliderData = slider.data('unslider')
+
+    setTimeout(()=> $('.phote-swipe-hint').hide(800),  1500)
   }
 
   render() {
@@ -52,6 +54,10 @@ export default class BirdDetail extends React.Component {
           <p className="name">
             丹顶鹤
           </p>
+        </div>
+
+        <div className="phote-swipe-hint">
+          左右滑动来查看新的图片
         </div>
       </div>
     )
