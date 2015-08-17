@@ -4,6 +4,7 @@ import './home.less'
 
 import TopSearchBar from '../../common/top_search_bar/top_search_bar.jsx'
 import BottomNavBar from '../../common/bottom_nav_bar/bottom_nav_bar.jsx'
+import BirdItem from '../../common/bird_item/bird_item.jsx'
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -25,6 +26,24 @@ export default class Home extends React.Component {
               >
               {showTopSearchBar ?
               <TopSearchBar> </TopSearchBar> : null}
+
+              <div className="birds-list">
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+                <BirdItem></BirdItem>
+              </div>
+
               <BottomNavBar selected="home"> </BottomNavBar>
            </div>
   }

@@ -70,7 +70,7 @@
 
 	var _pagesHomeHomeJsx2 = _interopRequireDefault(_pagesHomeHomeJsx);
 
-	var _pagesLogin_signupLogin_signupJsx = __webpack_require__(209);
+	var _pagesLogin_signupLogin_signupJsx = __webpack_require__(212);
 
 	var _pagesLogin_signupLogin_signupJsx2 = _interopRequireDefault(_pagesLogin_signupLogin_signupJsx);
 
@@ -23963,6 +23963,10 @@
 
 	var _commonBottom_nav_barBottom_nav_barJsx2 = _interopRequireDefault(_commonBottom_nav_barBottom_nav_barJsx);
 
+	var _commonBird_itemBird_itemJsx = __webpack_require__(209);
+
+	var _commonBird_itemBird_itemJsx2 = _interopRequireDefault(_commonBird_itemBird_itemJsx);
+
 	var Home = (function (_React$Component) {
 	  _inherits(Home, _React$Component);
 
@@ -23994,6 +23998,24 @@
 	          null,
 	          ' '
 	        ) : null,
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'birds-list' },
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null),
+	          _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], null)
+	        ),
 	        _react2['default'].createElement(
 	          _commonBottom_nav_barBottom_nav_barJsx2['default'],
 	          { selected: 'home' },
@@ -24072,7 +24094,7 @@
 
 
 	// module
-	exports.push([module.id, ".home {\n  height: 100%;\n  overflow: scroll;\n}\n", ""]);
+	exports.push([module.id, ".home {\n  height: 100%;\n}\n.home .birds-list {\n  position: fixed;\n  width: 100%;\n  height: calc(100% - 48px);\n  overflow: scroll;\n  background-color: #fefefe;\n}\n", ""]);
 
 	// exports
 
@@ -24190,7 +24212,7 @@
 
 
 	// module
-	exports.push([module.id, ".top-search-bar {\n  width: 100%;\n  height: 48px;\n  padding: 4px 6px;\n  position: fixed;\n  top: 0;\n  left: 0;\n  background-color: #fff;\n  border-bottom: 2px solid #F2F2F2;\n}\n.top-search-bar .search-group {\n  width: 100%;\n  height: 100%;\n}\n.top-search-bar .search-group .search-input-wrapper {\n  width: calc(100% - 32px);\n  height: 100%;\n  float: left;\n}\n.top-search-bar .search-group .search-input-wrapper .search-input {\n  width: 100%;\n  height: 100%;\n  background-color: #E4E4E4;\n  border: none;\n  border-radius: 5px;\n  padding-left: 10px;\n}\n.top-search-bar .search-group .search-btn-wrapper {\n  width: 32px;\n  height: 48px;\n  float: left;\n  text-align: center;\n}\n.top-search-bar .search-group .search-btn-wrapper i {\n  color: #A9A9A9;\n  font-size: 18px;\n  margin-top: 10px;\n  margin-left: 6px;\n}\n", ""]);
+	exports.push([module.id, ".top-search-bar {\n  width: 100%;\n  height: 48px;\n  padding: 4px 6px;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 99;\n  background-color: #fff;\n  border-bottom: 1px solid #E8E8E8;\n}\n.top-search-bar .search-group {\n  width: 100%;\n  height: 100%;\n}\n.top-search-bar .search-group .search-input-wrapper {\n  width: calc(100% - 32px);\n  height: 100%;\n  float: left;\n}\n.top-search-bar .search-group .search-input-wrapper .search-input {\n  width: 100%;\n  height: 100%;\n  background-color: #E4E4E4;\n  border: none;\n  border-radius: 5px;\n  padding-left: 10px;\n}\n.top-search-bar .search-group .search-btn-wrapper {\n  width: 32px;\n  height: 48px;\n  float: left;\n  text-align: center;\n}\n.top-search-bar .search-group .search-btn-wrapper i {\n  color: #A9A9A9;\n  font-size: 18px;\n  margin-top: 10px;\n  margin-left: 6px;\n}\n", ""]);
 
 	// exports
 
@@ -24305,7 +24327,7 @@
 
 
 	// module
-	exports.push([module.id, ".bottom-navbar {\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 48px;\n  background-color: #fff;\n  border-top: 2px solid #F2F2F2;\n}\n.bottom-navbar .nav-btn {\n  width: 25%;\n  height: 100%;\n  float: left;\n  text-align: center;\n}\n.bottom-navbar .nav-btn i {\n  color: #A9A9A9;\n  font-size: 24px;\n  margin-top: 8px;\n}\n.bottom-navbar .nav-btn.selected i {\n  color: #3fa7e9;\n}\n", ""]);
+	exports.push([module.id, ".bottom-navbar {\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 48px;\n  background-color: #fff;\n  border-top: 1px solid #E8E8E8;\n}\n.bottom-navbar .nav-btn {\n  width: 25%;\n  height: 100%;\n  float: left;\n  text-align: center;\n}\n.bottom-navbar .nav-btn i {\n  color: #A9A9A9;\n  font-size: 24px;\n  margin-top: 8px;\n}\n.bottom-navbar .nav-btn.selected i {\n  color: #3fa7e9;\n}\n", ""]);
 
 	// exports
 
@@ -24336,6 +24358,139 @@
 
 	__webpack_require__(210);
 
+	var BirdItem = (function (_React$Component) {
+	  _inherits(BirdItem, _React$Component);
+
+	  function BirdItem(props) {
+	    _classCallCheck(this, BirdItem);
+
+	    _get(Object.getPrototypeOf(BirdItem.prototype), 'constructor', this).call(this, props);
+	  }
+
+	  _createClass(BirdItem, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'bird-item' },
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'wrapper' },
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'introduction' },
+	            _react2['default'].createElement(
+	              'p',
+	              { className: 'name' },
+	              ' 丹顶鹤 '
+	            ),
+	            _react2['default'].createElement(
+	              'p',
+	              { className: 'latin' },
+	              ' 拉丁学名: ',
+	              _react2['default'].createElement(
+	                'span',
+	                { className: 'content' },
+	                ' Grus japonensis '
+	              ),
+	              ' '
+	            ),
+	            _react2['default'].createElement(
+	              'p',
+	              { className: 'english' },
+	              ' 英文名:  ',
+	              _react2['default'].createElement(
+	                'span',
+	                { className: 'content' },
+	                ' Manchurian Crane '
+	              ),
+	              ' '
+	            )
+	          ),
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'image' },
+	            _react2['default'].createElement('img', { src: '../www/img/1.jpg' })
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return BirdItem;
+	})(_react2['default'].Component);
+
+	exports['default'] = BirdItem;
+
+	BirdItem.propTypes = {};
+	module.exports = exports['default'];
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(211);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(199)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./bird_item.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./bird_item.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(198)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".bird-item {\n  width: 100%;\n  height: 80px;\n  margin: 5px 0;\n  padding: 0 10px;\n}\n.bird-item:nth-child(1) {\n  margin-top: 54px;\n}\n.bird-item .wrapper {\n  width: 100%;\n  height: 100%;\n  border: 2px solid #F4F4F4;\n  background-color: #fff;\n  -webkit-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  -moz-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  box-shadow: 0px 0px 15px 0px #f3f3f3;\n}\n.bird-item .wrapper .introduction {\n  float: left;\n  width: calc(100% - 80px);\n  height: 100%;\n}\n.bird-item .wrapper .introduction .name {\n  font-size: 18px;\n  margin: 8px 0 3px 20px;\n  color: #1C92CC;\n  font-weight: 600;\n}\n.bird-item .wrapper .introduction .latin,\n.bird-item .wrapper .introduction .english {\n  font-size: 12px;\n  color: #999;\n  margin-left: 20px;\n  margin-bottom: 0;\n}\n.bird-item .wrapper .introduction .latin .content,\n.bird-item .wrapper .introduction .english .content {\n  color: #666;\n}\n.bird-item .wrapper .introduction .latin .content {\n  font-style: italic;\n}\n.bird-item .wrapper .image {\n  float: left;\n  width: 80px;\n  height: 100%;\n  background-color: red;\n}\n.bird-item .wrapper .image img {\n  width: 100%;\n  height: 100%;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(213);
+
 	var LoginSignup = (function (_React$Component) {
 	  _inherits(LoginSignup, _React$Component);
 
@@ -24363,13 +24518,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 210 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(211);
+	var content = __webpack_require__(214);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(199)(content, {});
@@ -24389,7 +24544,7 @@
 	}
 
 /***/ },
-/* 211 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(198)();
