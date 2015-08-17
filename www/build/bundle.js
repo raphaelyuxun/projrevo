@@ -70,7 +70,7 @@
 
 	var _pagesHomeHomeJsx2 = _interopRequireDefault(_pagesHomeHomeJsx);
 
-	var _pagesLogin_signupLogin_signupJsx = __webpack_require__(203);
+	var _pagesLogin_signupLogin_signupJsx = __webpack_require__(209);
 
 	var _pagesLogin_signupLogin_signupJsx2 = _interopRequireDefault(_pagesLogin_signupLogin_signupJsx);
 
@@ -78,6 +78,8 @@
 	    Link = _reactRouter2['default'].Link,
 	    Route = _reactRouter2['default'].Route,
 	    RouteHandler = _reactRouter2['default'].RouteHandler;
+
+	_react2['default'].initializeTouchEvents(true);
 
 	var App = (function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -89,11 +91,16 @@
 	  }
 
 	  _createClass(App, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      console.log('app mount');
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2['default'].createElement(
 	        'div',
-	        { 'class': 'app' },
+	        { className: 'app' },
 	        _react2['default'].createElement(RouteHandler, null)
 	      );
 	    }
@@ -23636,7 +23643,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "html,\nbody {\n  width: 100%;\n  height: 100%;\n}\n.app {\n  width: 100%;\n  height: 100%;\n  color: #222;\n}\n", ""]);
 
 	// exports
 
@@ -23948,6 +23955,14 @@
 
 	__webpack_require__(201);
 
+	var _commonTop_search_barTop_search_barJsx = __webpack_require__(203);
+
+	var _commonTop_search_barTop_search_barJsx2 = _interopRequireDefault(_commonTop_search_barTop_search_barJsx);
+
+	var _commonBottom_nav_barBottom_nav_barJsx = __webpack_require__(206);
+
+	var _commonBottom_nav_barBottom_nav_barJsx2 = _interopRequireDefault(_commonBottom_nav_barBottom_nav_barJsx);
+
 	var Home = (function (_React$Component) {
 	  _inherits(Home, _React$Component);
 
@@ -23955,16 +23970,64 @@
 	    _classCallCheck(this, Home);
 
 	    _get(Object.getPrototypeOf(Home.prototype), 'constructor', this).call(this, props);
+
+	    this.state = {
+	      showTopSearchBar: true
+	    };
+
+	    // debouncing
+	    this.moveUpCount = 0;
+	    this.moveDownCount = 0;
 	  }
 
 	  _createClass(Home, [{
 	    key: 'render',
 	    value: function render() {
+	      var showTopSearchBar = this.state.showTopSearchBar;
 	      return _react2['default'].createElement(
 	        'div',
-	        null,
-	        'This is home'
+	        { className: 'home',
+	          onTouchMove: this.touchMove.bind(this)
+	        },
+	        showTopSearchBar ? _react2['default'].createElement(
+	          _commonTop_search_barTop_search_barJsx2['default'],
+	          null,
+	          ' '
+	        ) : null,
+	        _react2['default'].createElement(
+	          _commonBottom_nav_barBottom_nav_barJsx2['default'],
+	          { selected: 'home' },
+	          ' '
+	        )
 	      );
+	    }
+	  }, {
+	    key: 'touchMove',
+	    value: function touchMove(e) {
+	      var touch = e.nativeEvent.touches[0];
+	      if (!this.previousY) {
+	        this.previousY = touch.pageY;
+	      } else {
+	        var delta = touch.pageY - this.previousY;
+	        this.previousY = touch.pageY;
+	        if (delta < 0) {
+	          this.moveUpCount = 0;
+	          this.moveDownCount++;
+	          if (this.moveDownCount === 5) {
+	            // console.log('move down')
+	            this.setState({ showTopSearchBar: false });
+	            this.moveDownCount = 0;
+	          }
+	        } else {
+	          this.moveDownCount = 0;
+	          this.moveUpCount++;
+	          if (this.moveUpCount === 5) {
+	            // console.log('move up')
+	            this.setState({ showTopSearchBar: true });
+	            this.moveUpCount = 0;
+	          }
+	        }
+	      }
 	    }
 	  }]);
 
@@ -24009,7 +24072,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".home {\n  height: 100%;\n  overflow: scroll;\n}\n", ""]);
 
 	// exports
 
@@ -24040,6 +24103,239 @@
 
 	__webpack_require__(204);
 
+	var TopSearchBar = (function (_React$Component) {
+	  _inherits(TopSearchBar, _React$Component);
+
+	  function TopSearchBar(props) {
+	    _classCallCheck(this, TopSearchBar);
+
+	    _get(Object.getPrototypeOf(TopSearchBar.prototype), 'constructor', this).call(this, props);
+
+	    this.state = {
+	      searchText: ''
+	    };
+	  }
+
+	  _createClass(TopSearchBar, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'top-search-bar' },
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'search-group' },
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'search-input-wrapper' },
+	            _react2['default'].createElement('input', { type: 'text',
+	              className: 'search-input',
+	              placeholder: '在这里搜索鸟类',
+	              value: this.state.searchText,
+	              onChange: this.changeSearchText.bind(this) })
+	          ),
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'search-btn-wrapper' },
+	            _react2['default'].createElement('i', { className: 'fa fa-plus' })
+	          )
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'changeSearchText',
+	    value: function changeSearchText(e) {
+	      this.setState({ searchText: e.target.value });
+	    }
+	  }]);
+
+	  return TopSearchBar;
+	})(_react2['default'].Component);
+
+	exports['default'] = TopSearchBar;
+	module.exports = exports['default'];
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(205);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(199)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./top_search_bar.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./top_search_bar.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 205 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(198)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".top-search-bar {\n  width: 100%;\n  height: 48px;\n  padding: 4px 6px;\n  position: fixed;\n  top: 0;\n  left: 0;\n  background-color: #fff;\n  border-bottom: 2px solid #F2F2F2;\n}\n.top-search-bar .search-group {\n  width: 100%;\n  height: 100%;\n}\n.top-search-bar .search-group .search-input-wrapper {\n  width: calc(100% - 32px);\n  height: 100%;\n  float: left;\n}\n.top-search-bar .search-group .search-input-wrapper .search-input {\n  width: 100%;\n  height: 100%;\n  background-color: #E4E4E4;\n  border: none;\n  border-radius: 5px;\n  padding-left: 10px;\n}\n.top-search-bar .search-group .search-btn-wrapper {\n  width: 32px;\n  height: 48px;\n  float: left;\n  text-align: center;\n}\n.top-search-bar .search-group .search-btn-wrapper i {\n  color: #A9A9A9;\n  font-size: 18px;\n  margin-top: 10px;\n  margin-left: 6px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 206 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(207);
+
+	var BottomNavBar = (function (_React$Component) {
+	  _inherits(BottomNavBar, _React$Component);
+
+	  function BottomNavBar(props) {
+	    _classCallCheck(this, BottomNavBar);
+
+	    _get(Object.getPrototypeOf(BottomNavBar.prototype), 'constructor', this).call(this, props);
+	  }
+
+	  _createClass(BottomNavBar, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'bottom-navbar' },
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'nav-btn ' + (this.props.selected === 'home' ? 'selected' : '') },
+	          _react2['default'].createElement('i', { className: 'fa fa-book' })
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'nav-btn ' + (this.props.selected === 'discovery' ? 'selected' : '') },
+	          _react2['default'].createElement('i', { className: 'fa fa-safari' })
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'nav-btn ' + (this.props.selected === 'comments' ? 'selected' : '') },
+	          _react2['default'].createElement('i', { className: 'fa fa-commenting' })
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'nav-btn ' + (this.props.selected === 'profile' ? 'selected' : '') },
+	          _react2['default'].createElement('i', { className: 'fa fa-user' })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return BottomNavBar;
+	})(_react2['default'].Component);
+
+	exports['default'] = BottomNavBar;
+
+	BottomNavBar.propTypes = {
+	  selected: _react2['default'].PropTypes.string
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(208);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(199)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./bottom_nav_bar.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./bottom_nav_bar.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(198)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".bottom-navbar {\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 48px;\n  background-color: #fff;\n  border-top: 2px solid #F2F2F2;\n}\n.bottom-navbar .nav-btn {\n  width: 25%;\n  height: 100%;\n  float: left;\n  text-align: center;\n}\n.bottom-navbar .nav-btn i {\n  color: #A9A9A9;\n  font-size: 24px;\n  margin-top: 8px;\n}\n.bottom-navbar .nav-btn.selected i {\n  color: #3fa7e9;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 209 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(210);
+
 	var LoginSignup = (function (_React$Component) {
 	  _inherits(LoginSignup, _React$Component);
 
@@ -24067,13 +24363,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 204 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(205);
+	var content = __webpack_require__(211);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(199)(content, {});
@@ -24093,7 +24389,7 @@
 	}
 
 /***/ },
-/* 205 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(198)();

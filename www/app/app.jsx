@@ -11,13 +11,19 @@ let DefaultRoute = Router.DefaultRoute,
     Route = Router.Route,
     RouteHandler = Router.RouteHandler
 
+React.initializeTouchEvents(true)
+
 class App extends React.Component {
   constructor(props) {
     super(props)
   }
 
+  componentDidMount() {
+    console.log('app mount')
+  }
+
   render() {
-    return  <div class="app">
+    return  <div className="app">
               {/* this is the important part */}
               <RouteHandler/>
             </div>
