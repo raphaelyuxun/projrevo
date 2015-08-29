@@ -3,6 +3,7 @@ import React from 'react'
 import './login_signup.less'
 
 import signupApi from '../../api/signup'
+import loginApi from '../../api/login'
 
 export default class LoginSignup extends React.Component {
   constructor(props) {
@@ -75,5 +76,8 @@ export default class LoginSignup extends React.Component {
   login() {
     let username = this.state.username,
         password = this.state.password
+    loginApi.login(username, email, (res)=> {
+      alert(res)
+    })
   }
 }
