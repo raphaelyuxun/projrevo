@@ -31,12 +31,16 @@ class App extends React.Component {
   }
 }
 
+//window.localStorage.setItem('userID', null)
+//alert('userID2: ' + window.localStorage.getItem('userID') + '   ' + window.location.href)
+//let userID = widnow.localStorage.getItem('userID')
+
 let routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="home" handler={Home}/>
     <Route name="login_signup" handler={LoginSignup}/>
     <Route name="bird" handler={BirdPage}/>
-    <DefaultRoute handler={LoginSignup}/>
+    <DefaultRoute handler={/*userID ? Home : LoginSignup*/LoginSignup}/>  {/* 如果已经登陆了， 则进入 Home 页面 */}
   </Route>
 )
 

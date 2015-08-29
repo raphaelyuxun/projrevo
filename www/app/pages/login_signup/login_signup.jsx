@@ -65,19 +65,29 @@ export default class LoginSignup extends React.Component {
   }
 
   signup() {
-    let username = this.state.username,
-        email = this.state.email,
+    let username = this.state.username.trim(),
+        email = this.state.email.trim(),
         password = this.state.password
     signupApi.signup(username, email, password, (res)=> {
-      alert(res)
+      if (res.success) { // signup successfully
+        window.localStorage.setItem('userID', res.userID)
+        window.localStorage.setItem('username', res.username)
+      } else {
+        alert(res.msg)
+      }
     })
   }
 
   login() {
-    let username = this.state.username,
+    let username = this.state.username.trim(),
         password = this.state.password
-    loginApi.login(username, email, (res)=> {
-      alert(res)
+    loginApi.login(username, password, (res)=> {
+      if (res.success) { // login successfully
+        window.localStorage.setItem('userID', res.userID)
+        window.localStorage.setItem('username', res.username)
+      } else {
+        alert(res.msg)
+      }
     })
   }
 }

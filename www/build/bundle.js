@@ -94,6 +94,10 @@
 	    _get(Object.getPrototypeOf(App.prototype), 'constructor', this).call(this, props);
 	  }
 
+	  //window.localStorage.setItem('userID', null)
+	  //alert('userID2: ' + window.localStorage.getItem('userID') + '   ' + window.location.href)
+	  //let userID = widnow.localStorage.getItem('userID')
+
 	  _createClass(App, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
@@ -117,15 +121,16 @@
 	  Route,
 	  { name: 'app', path: '/', handler: App },
 	  _react2['default'].createElement(Route, { name: 'home', handler: _pagesHomeHomeJsx2['default'] }),
-	  _react2['default'].createElement(Route, { name: 'login_signup', handler: _pagesLogin_signupLogin_signupJsx2['default'] }),
+	  _react2['default'].createElement(Route, { name: 'login_signup', handler: /*userID ? Home : LoginSignup*/_pagesLogin_signupLogin_signupJsx2['default'] }),
 	  _react2['default'].createElement(Route, { name: 'bird', handler: _pagesBird_pageBird_pageJsx2['default'] }),
-	  _react2['default'].createElement(DefaultRoute, { handler: _pagesLogin_signupLogin_signupJsx2['default'] })
+	  _react2['default'].createElement(DefaultRoute, { handler: _pagesLogin_signupLogin_signupJsx2['default'] }),
+	  '  '
 	);
 
 	_reactRouter2['default'].run(routes, function (Handler) {
 	  _react2['default'].render(_react2['default'].createElement(Handler, null), document.body);
 	});
-	/* this is the important part */
+	/* this is the important part */ /* 如果已经登陆了， 则进入 Home 页面 */
 
 /***/ },
 /* 1 */
@@ -24629,20 +24634,32 @@
 	  }, {
 	    key: 'signup',
 	    value: function signup() {
-	      var username = this.state.username,
-	          email = this.state.email,
+	      var username = this.state.username.trim(),
+	          email = this.state.email.trim(),
 	          password = this.state.password;
 	      _apiSignup2['default'].signup(username, email, password, function (res) {
-	        alert(res);
+	        if (res.success) {
+	          // signup successfully
+	          window.localStorage.setItem('userID', res.userID);
+	          window.localStorage.setItem('username', res.username);
+	        } else {
+	          alert(res.msg);
+	        }
 	      });
 	    }
 	  }, {
 	    key: 'login',
 	    value: function login() {
-	      var username = this.state.username,
+	      var username = this.state.username.trim(),
 	          password = this.state.password;
-	      _apiLogin2['default'].login(username, email, function (res) {
-	        alert(res);
+	      _apiLogin2['default'].login(username, password, function (res) {
+	        if (res.success) {
+	          // login successfully
+	          window.localStorage.setItem('userID', res.userID);
+	          window.localStorage.setItem('username', res.username);
+	        } else {
+	          alert(res.msg);
+	        }
 	      });
 	    }
 	  }]);
