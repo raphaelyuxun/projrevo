@@ -74,7 +74,7 @@
 
 	var _pagesLogin_signupLogin_signupJsx2 = _interopRequireDefault(_pagesLogin_signupLogin_signupJsx);
 
-	var _pagesBird_pageBird_pageJsx = __webpack_require__(215);
+	var _pagesBird_pageBird_pageJsx = __webpack_require__(217);
 
 	var _pagesBird_pageBird_pageJsx2 = _interopRequireDefault(_pagesBird_pageBird_pageJsx);
 
@@ -119,7 +119,7 @@
 	  _react2['default'].createElement(Route, { name: 'home', handler: _pagesHomeHomeJsx2['default'] }),
 	  _react2['default'].createElement(Route, { name: 'login_signup', handler: _pagesLogin_signupLogin_signupJsx2['default'] }),
 	  _react2['default'].createElement(Route, { name: 'bird', handler: _pagesBird_pageBird_pageJsx2['default'] }),
-	  _react2['default'].createElement(DefaultRoute, { handler: _pagesHomeHomeJsx2['default'] })
+	  _react2['default'].createElement(DefaultRoute, { handler: _pagesLogin_signupLogin_signupJsx2['default'] })
 	);
 
 	_reactRouter2['default'].run(routes, function (Handler) {
@@ -24431,7 +24431,6 @@
 	  },
 
 	  showDetails: function showDetails() {
-	    alert('clicked');
 	    this.transitionTo('bird', { englishName: this.props.englishName });
 	  }
 	});
@@ -24505,6 +24504,10 @@
 
 	__webpack_require__(213);
 
+	var _apiSignup = __webpack_require__(215);
+
+	var _apiSignup2 = _interopRequireDefault(_apiSignup);
+
 	var LoginSignup = (function (_React$Component) {
 	  _inherits(LoginSignup, _React$Component);
 
@@ -24512,16 +24515,128 @@
 	    _classCallCheck(this, LoginSignup);
 
 	    _get(Object.getPrototypeOf(LoginSignup.prototype), 'constructor', this).call(this, props);
+	    this.state = {
+	      username: '',
+	      password: '',
+	      email: '',
+	      login: true
+	    };
 	  }
 
 	  _createClass(LoginSignup, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2['default'].createElement(
-	        'div',
-	        null,
-	        'This is login/signup'
-	      );
+	      if (this.state.login) {
+	        // render login
+	        return _react2['default'].createElement(
+	          'div',
+	          { className: 'container login_signup' },
+	          _react2['default'].createElement(
+	            'form',
+	            { className: 'form-login' },
+	            _react2['default'].createElement(
+	              'h2',
+	              { className: 'heading' },
+	              ' 登录 '
+	            ),
+	            _react2['default'].createElement('input', { type: 'text', placeholder: 'username', className: 'form-control', value: this.state.username, onChange: this.inputUsername.bind(this), required: true }),
+	            _react2['default'].createElement('input', { type: 'password', placeholder: 'password', className: 'form-control', value: this.state.password, onChange: this.inputPassword.bind(this), required: true }),
+	            _react2['default'].createElement(
+	              'button',
+	              { className: 'btn btn-lg btn-primary btn-block login-btn', type: 'submit', onClick: this.login.bind(this) },
+	              ' Login '
+	            )
+	          ),
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'hint' },
+	            _react2['default'].createElement(
+	              'span',
+	              null,
+	              ' 没有账户? ',
+	              _react2['default'].createElement(
+	                'a',
+	                { onClick: this.togglePage.bind(this) },
+	                ' 点击我进行注册 '
+	              )
+	            )
+	          )
+	        );
+	      } else {
+	        // render signup
+	        return _react2['default'].createElement(
+	          'div',
+	          { className: 'container login_signup' },
+	          _react2['default'].createElement(
+	            'form',
+	            { className: 'form-signin' },
+	            _react2['default'].createElement(
+	              'h2',
+	              { className: 'heading' },
+	              ' 注册 '
+	            ),
+	            _react2['default'].createElement('input', { type: 'email', placeholder: 'email', className: 'form-control', value: this.state.email, onChange: this.inputEmail.bind(this), required: true, autofocus: true }),
+	            _react2['default'].createElement('input', { type: 'text', placeholder: 'username', className: 'form-control', value: this.state.username, onChange: this.inputUsername.bind(this), required: true }),
+	            _react2['default'].createElement('input', { type: 'password', placeholder: 'password', className: 'form-control', value: this.state.password, onChange: this.inputPassword.bind(this), required: true }),
+	            _react2['default'].createElement(
+	              'button',
+	              { className: 'btn btn-lg btn-primary btn-block signup-btn', type: 'submit', onClick: this.signup.bind(this) },
+	              ' Signup '
+	            )
+	          ),
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'hint' },
+	            _react2['default'].createElement(
+	              'span',
+	              null,
+	              ' 已经有账户了? ',
+	              _react2['default'].createElement(
+	                'a',
+	                { onClick: this.togglePage.bind(this) },
+	                ' 点击我进行登录 '
+	              )
+	            )
+	          )
+	        );
+	      }
+	    }
+	  }, {
+	    key: 'togglePage',
+	    value: function togglePage() {
+	      var login = this.state.login;
+	      this.setState({ login: !login });
+	    }
+	  }, {
+	    key: 'inputEmail',
+	    value: function inputEmail(e) {
+	      this.setState({ email: e.target.value });
+	    }
+	  }, {
+	    key: 'inputUsername',
+	    value: function inputUsername(e) {
+	      this.setState({ username: e.target.value });
+	    }
+	  }, {
+	    key: 'inputPassword',
+	    value: function inputPassword(e) {
+	      this.setState({ password: e.target.value });
+	    }
+	  }, {
+	    key: 'signup',
+	    value: function signup() {
+	      var username = this.state.username,
+	          email = this.state.email,
+	          password = this.state.password;
+	      _apiSignup2['default'].signup(username, email, password, function (res) {
+	        alert(res);
+	      });
+	    }
+	  }, {
+	    key: 'login',
+	    value: function login() {
+	      var username = this.state.username,
+	          password = this.state.password;
 	    }
 	  }]);
 
@@ -24566,13 +24681,62 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".login_signup .form-signin,\n.login_signup .form-login {\n  max-width: 330px;\n  margin: 50px auto 20px;\n  padding: 15px 15px 30px;\n  border-bottom: 1px solid #CDCDCD;\n}\n.login_signup .form-signin .heading,\n.login_signup .form-login .heading {\n  margin-bottom: 10px;\n}\n.login_signup .form-signin input,\n.login_signup .form-login input {\n  font-size: 16px;\n  padding: 10px;\n  height: auto;\n  margin-bottom: -1px;\n  box-shadow: none;\n}\n.login_signup .form-signin input[type=\"email\"] {\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.login_signup .form-signin input[type=\"text\"] {\n  border-radius: 0;\n}\n.login_signup .form-signin input[type=\"password\"] {\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.login_signup .form-signin .signup-btn {\n  margin-top: 20px;\n}\n.login_signup .form-login input[type=\"text\"] {\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.login_signup .form-login input[type=\"password\"] {\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.login_signup .form-login .login-btn {\n  margin-top: 20px;\n}\n.login_signup .hint {\n  padding-left: 25px;\n}\n.login_signup a {\n  cursor: pointer;\n}\n.login_signup a:hover {\n  text-decoration: none;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _config = __webpack_require__(216);
+
+	var signupApi = {
+	  signup: function signup(email, username, password, callback) {
+	    return $.ajax((0, _config.configAddr)('/api/signup'), {
+	      type: 'POST',
+	      dataType: 'json',
+	      data: { email: email, username: username, password: password },
+	      success: function success(res) {
+	        if (callback) {
+	          if (res) callback(res);else callback(null);
+	        }
+	      },
+	      error: function error(res) {
+	        if (callback) callback(null);
+	      }
+	    });
+	  }
+	};
+
+	exports['default'] = signupApi;
+	module.exports = exports['default'];
+
+/***/ },
+/* 216 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	var SERVER_ADDRESS = 'http://192.168.0.105:31000';
+
+	var configAddr = function configAddr(addr) {
+	  return SERVER_ADDRESS + addr;
+	};
+	exports.configAddr = configAddr;
+
+/***/ },
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24595,13 +24759,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(216);
+	__webpack_require__(218);
 
-	var _commonTop_nav_barTop_nav_barJsx = __webpack_require__(218);
+	var _commonTop_nav_barTop_nav_barJsx = __webpack_require__(220);
 
 	var _commonTop_nav_barTop_nav_barJsx2 = _interopRequireDefault(_commonTop_nav_barTop_nav_barJsx);
 
-	var _commonBird_detailBird_detailJsx = __webpack_require__(221);
+	var _commonBird_detailBird_detailJsx = __webpack_require__(223);
 
 	var _commonBird_detailBird_detailJsx2 = _interopRequireDefault(_commonBird_detailBird_detailJsx);
 
@@ -24645,13 +24809,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 216 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(217);
+	var content = __webpack_require__(219);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(199)(content, {});
@@ -24671,7 +24835,7 @@
 	}
 
 /***/ },
-/* 217 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(198)();
@@ -24685,7 +24849,7 @@
 
 
 /***/ },
-/* 218 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24708,7 +24872,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(219);
+	__webpack_require__(221);
 
 	var TopNavBar = (function (_React$Component) {
 	  _inherits(TopNavBar, _React$Component);
@@ -24753,13 +24917,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 219 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(220);
+	var content = __webpack_require__(222);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(199)(content, {});
@@ -24779,7 +24943,7 @@
 	}
 
 /***/ },
-/* 220 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(198)();
@@ -24793,7 +24957,7 @@
 
 
 /***/ },
-/* 221 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24816,7 +24980,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(222);
+	__webpack_require__(224);
 
 	var BirdDetail = (function (_React$Component) {
 	  _inherits(BirdDetail, _React$Component);
@@ -24841,6 +25005,10 @@
 	        fluid: false //  Support responsive design. May break non-responsive designs
 	      });
 	      this.sliderData = slider.data('unslider');
+
+	      setTimeout(function () {
+	        return $('.phote-swipe-hint').hide(800);
+	      }, 1500);
 	    }
 	  }, {
 	    key: 'render',
@@ -24871,7 +25039,44 @@
 	            )
 	          )
 	        ),
-	        _react2['default'].createElement('div', { className: 'introduction' })
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'btns' },
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'btn' },
+	            _react2['default'].createElement(
+	              'span',
+	              null,
+	              ' 查看地图 '
+	            ),
+	            _react2['default'].createElement('i', { className: 'fa fa-map-o' })
+	          ),
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'btn' },
+	            _react2['default'].createElement(
+	              'span',
+	              null,
+	              ' 查看更多图片 '
+	            ),
+	            _react2['default'].createElement('i', { className: 'fa fa-picture-o' })
+	          )
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'introduction' },
+	          _react2['default'].createElement(
+	            'p',
+	            { className: 'name' },
+	            '丹顶鹤'
+	          )
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'phote-swipe-hint' },
+	          '左右滑动来查看新的图片'
+	        )
 	      );
 	    }
 	  }, {
@@ -24935,13 +25140,13 @@
 	/* 点击图片出现缩略图 */
 
 /***/ },
-/* 222 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(223);
+	var content = __webpack_require__(225);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(199)(content, {});
@@ -24961,7 +25166,7 @@
 	}
 
 /***/ },
-/* 223 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(198)();
@@ -24969,7 +25174,7 @@
 
 
 	// module
-	exports.push([module.id, ".bird-detail {\n  width: 100%;\n  height: 100%;\n  background-color: #fefefe;\n}\n.bird-detail .bird-images {\n  width: 100%;\n  height: 256px;\n  background-color: #CDCDCD;\n  position: relative;\n  overflow: auto;\n}\n.bird-detail .bird-images li {\n  list-style: none;\n}\n.bird-detail .bird-images ul {\n  padding: 0 !important;\n}\n.bird-detail .bird-images ul li {\n  float: left;\n}\n.bird-detail .bird-images ul li img {\n  width: 100%;\n  height: 256px;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n", ""]);
+	exports.push([module.id, ".bird-detail {\n  width: 100%;\n  height: 100%;\n  background-color: #fefefe;\n}\n.bird-detail .bird-images {\n  width: 100%;\n  height: 256px;\n  background-color: #CDCDCD;\n  position: relative;\n  overflow: auto;\n}\n.bird-detail .bird-images li {\n  list-style: none;\n}\n.bird-detail .bird-images ul {\n  padding: 0 !important;\n}\n.bird-detail .bird-images ul li {\n  float: left;\n}\n.bird-detail .bird-images ul li img {\n  width: 100%;\n  height: 256px;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.bird-detail .btns {\n  height: 36px;\n  text-align: center;\n  border-bottom: 1px solid #E4E4E4;\n}\n.bird-detail .btns .btn {\n  width: 50%;\n  border-radius: 0;\n  border-right: 1px solid #E4E4E4;\n  color: #444;\n}\n.bird-detail .introduction .name {\n  font-size: 26px;\n  margin: 8px 0 3px 20px;\n  color: #1C92CC;\n  font-weight: 600;\n}\n.bird-detail .phote-swipe-hint {\n  position: absolute;\n  top: 211px;\n  right: 5px;\n  padding: 6px;\n  background-color: #2C2B2B;\n  color: #fff;\n  border-radius: 8px;\n  box-shadow: 0px 0px 5px 0px #242424;\n}\n", ""]);
 
 	// exports
 

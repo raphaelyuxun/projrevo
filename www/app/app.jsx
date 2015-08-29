@@ -36,7 +36,7 @@ let routes = (
     <Route name="home" handler={Home}/>
     <Route name="login_signup" handler={LoginSignup}/>
     <Route name="bird" handler={BirdPage}/>
-    <DefaultRoute handler={Home}/>
+    <DefaultRoute handler={LoginSignup}/>
   </Route>
 )
 
