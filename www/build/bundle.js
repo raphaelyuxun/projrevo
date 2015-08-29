@@ -24699,7 +24699,7 @@
 	var _config = __webpack_require__(216);
 
 	var signupApi = {
-	  signup: function signup(email, username, password, callback) {
+	  signup: function signup(username, email, password, callback) {
 	    return $.ajax((0, _config.configAddr)('/api/signup'), {
 	      type: 'POST',
 	      dataType: 'json',

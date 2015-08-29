@@ -1,7 +1,7 @@
 import {configAddr} from './config'
 
 let signupApi = {
-  signup: function(email, username, password, callback) {
+  signup: function(username, email, password, callback) {
     return $.ajax(configAddr('/api/signup'), {
       type: 'POST',
       dataType: 'json',
