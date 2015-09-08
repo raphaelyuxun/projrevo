@@ -12,10 +12,12 @@ export default class BirdPage extends React.Component {
 
   render() {
     return (
-      <div className="bird-page">
-        <TopNavBar transparent={true}> </TopNavBar>
-        <div className="content">
-          <BirdDetail> </BirdDetail>
+      <div data-role="page" className="bird-page">
+        <div data-role="main" className="ui-content">
+          <TopNavBar transparent={true}> </TopNavBar>
+          <div className="content">
+            <BirdDetail> </BirdDetail>
+          </div>
         </div>
       </div>
     )
