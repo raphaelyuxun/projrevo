@@ -16,7 +16,7 @@ let BirdItem = React.createClass({
         englishName = this.props.englishName,
         birdImage = this.props.birdImage
     return (
-      <div className="bird-item" onClick={this.showDetails} onTouchStart={this.showDetails}>
+      <li className="bird-item" onClick={this.showDetails} onTouchStart={this.showDetails}>
         <div className="wrapper">
           <div className="introduction">
             <p className="name"> {chineseName} </p>
@@ -27,7 +27,7 @@ let BirdItem = React.createClass({
             <img src={'../www/img/' + birdImage}/>
           </div>
         </div>
-      </div>
+      </li>
     )
   },
 

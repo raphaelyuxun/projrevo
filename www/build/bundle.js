@@ -20524,7 +20524,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  width: 100%;\n  height: 100%;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\np {\n  margin: 0;\n}\n.app {\n  width: 100%;\n  height: 100%;\n  color: #222;\n}\n.clearfix {\n  *zoom: 1;\n}\n.clearfix:before,\n.clearfix:after {\n  display: table;\n  content: \"\";\n  line-height: 0;\n}\n.clearfix:after {\n  clear: both;\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\np {\n  margin: 0;\n}\n.app {\n  width: 100%;\n  height: 100%;\n  color: #222;\n}\n.clearfix {\n  *zoom: 1;\n}\n.clearfix:before,\n.clearfix:after {\n  display: table;\n  content: \"\";\n  line-height: 0;\n}\n.clearfix:after {\n  clear: both;\n}\n", ""]);
 
 	// exports
 
@@ -20855,25 +20855,15 @@
 	    _classCallCheck(this, Home);
 
 	    _get(Object.getPrototypeOf(Home.prototype), 'constructor', this).call(this, props);
-
-	    this.state = {
-	      showTopSearchBar: true
-	    };
-
-	    // debouncing
-	    this.moveUpCount = 0;
-	    this.moveDownCount = 0;
 	  }
 
 	  _createClass(Home, [{
 	    key: 'render',
 	    value: function render() {
-	      var showTopSearchBar = this.state.showTopSearchBar;
 	      return _react2['default'].createElement(
 	        'div',
 	        { 'data-role': 'page',
-	          className: 'home',
-	          onTouchMove: this.touchMove.bind(this)
+	          className: 'home'
 	        },
 	        _react2['default'].createElement(
 	          _commonTop_search_barTop_search_barJsx2['default'],
@@ -20884,8 +20874,8 @@
 	          'div',
 	          { 'data-role': 'main', className: 'ui-content' },
 	          _react2['default'].createElement(
-	            'div',
-	            { className: 'birds-list' },
+	            'ul',
+	            { className: 'birds-list', 'data-role': 'listview', 'data-filter': 'true', 'data-input': '#birdFilter' },
 	            _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
 	            _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤1', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
 	            _react2['default'].createElement(_commonBird_itemBird_itemJsx2['default'], { chineseName: '丹顶鹤2', latinName: 'Grus japonensis', englishName: 'Manchurian Crane', birdImage: '1.jpg' }),
@@ -20909,34 +20899,6 @@
 	        )
 	      );
 	    }
-	  }, {
-	    key: 'touchMove',
-	    value: function touchMove(e) {
-	      var touch = e.nativeEvent.touches[0];
-	      if (!this.previousY) {
-	        this.previousY = touch.pageY;
-	      } else {
-	        var delta = touch.pageY - this.previousY;
-	        this.previousY = touch.pageY;
-	        if (delta < 0) {
-	          this.moveUpCount = 0;
-	          this.moveDownCount++;
-	          if (this.moveDownCount === 5) {
-	            // console.log('move down')
-	            this.setState({ showTopSearchBar: false });
-	            this.moveDownCount = 0;
-	          }
-	        } else {
-	          this.moveDownCount = 0;
-	          this.moveUpCount++;
-	          if (this.moveUpCount === 5) {
-	            // console.log('move up')
-	            this.setState({ showTopSearchBar: true });
-	            this.moveUpCount = 0;
-	          }
-	        }
-	      }
-	    }
 	  }]);
 
 	  return Home;
@@ -20944,10 +20906,6 @@
 
 	exports['default'] = Home;
 	module.exports = exports['default'];
-	/*
-	 {showTopSearchBar ?
-	 <TopSearchBar> </TopSearchBar> : null}
-	 */
 
 /***/ },
 /* 162 */
@@ -20984,7 +20942,7 @@
 
 
 	// module
-	exports.push([module.id, ".home {\n  width: 100%;\n  height: 100%;\n}\n.home .birds-list {\n  width: 100%;\n  background-color: #fefefe;\n}\n", ""]);
+	exports.push([module.id, ".home {\n  width: 100%;\n  height: 100%;\n}\n.home .birds-list {\n  background-color: #fefefe;\n}\n", ""]);
 
 	// exports
 
@@ -21035,22 +20993,12 @@
 	        'div',
 	        { 'data-role': 'header', 'data-position': 'fixed', className: 'top-search-bar' },
 	        _react2['default'].createElement(
-	          'div',
-	          { className: 'search-group' },
-	          _react2['default'].createElement(
-	            'div',
-	            { className: 'search-input-wrapper' },
-	            _react2['default'].createElement('input', { type: 'text',
-	              className: 'search-input',
-	              placeholder: '在这里搜索鸟类',
-	              value: this.state.searchText,
-	              onChange: this.changeSearchText.bind(this) })
-	          ),
-	          _react2['default'].createElement(
-	            'div',
-	            { className: 'search-btn-wrapper' },
-	            _react2['default'].createElement('i', { className: 'fa fa-plus' })
-	          )
+	          'form',
+	          { className: 'ui-filterable search-box' },
+	          _react2['default'].createElement('input', { id: 'birdFilter', 'data-type': 'search',
+	            placeholder: '在这里搜索鸟类',
+	            value: this.state.searchText,
+	            onChange: this.changeSearchText.bind(this) })
 	        )
 	      );
 	    }
@@ -21102,7 +21050,7 @@
 
 
 	// module
-	exports.push([module.id, ".top-search-bar {\n  width: 100%;\n  height: 48px;\n  padding: 4px 6px;\n  background-color: #fff;\n  border-bottom: 1px solid #E8E8E8;\n}\n.top-search-bar .search-group {\n  width: 100%;\n  height: 100%;\n}\n.top-search-bar .search-group .search-input-wrapper {\n  width: calc(100% - 32px);\n  height: 100%;\n  float: left;\n}\n.top-search-bar .search-group .search-input-wrapper .search-input {\n  width: 100%;\n  height: 100%;\n  background-color: #E4E4E4;\n  border: none;\n  border-radius: 5px;\n  padding-left: 10px;\n}\n.top-search-bar .search-group .search-btn-wrapper {\n  width: 32px;\n  height: 48px;\n  float: left;\n  text-align: center;\n}\n.top-search-bar .search-group .search-btn-wrapper i {\n  color: #fff;\n  font-size: 18px;\n  margin-top: 10px;\n  margin-left: 6px;\n}\n", ""]);
+	exports.push([module.id, ".top-search-bar {\n  width: 100%;\n  height: 48px;\n  padding: 4px 6px;\n  box-sizing: border-box;\n}\n.top-search-bar .search-box {\n  margin-top: -8px;\n}\n", ""]);
 
 	// exports
 
@@ -21256,7 +21204,7 @@
 	        englishName = this.props.englishName,
 	        birdImage = this.props.birdImage;
 	    return _react2['default'].createElement(
-	      'div',
+	      'li',
 	      { className: 'bird-item', onClick: this.showDetails, onTouchStart: this.showDetails },
 	      _react2['default'].createElement(
 	        'div',
@@ -21350,7 +21298,7 @@
 
 
 	// module
-	exports.push([module.id, ".bird-item {\n  height: 80px;\n  margin: 5px 0;\n}\n.bird-item .wrapper {\n  width: 100%;\n  height: 100%;\n  border: 2px solid #F4F4F4;\n  background-color: #fff;\n  -webkit-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  -moz-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  box-shadow: 0px 0px 15px 0px #f3f3f3;\n}\n.bird-item .wrapper .introduction {\n  float: left;\n  width: calc(100% - 80px);\n  height: 100%;\n}\n.bird-item .wrapper .introduction .name {\n  font-size: 18px;\n  margin: 8px 0 3px 20px;\n  color: #1C92CC;\n  font-weight: 600;\n}\n.bird-item .wrapper .introduction .latin,\n.bird-item .wrapper .introduction .english {\n  font-size: 12px;\n  color: #999;\n  margin-left: 20px;\n  margin-bottom: 0;\n}\n.bird-item .wrapper .introduction .latin .content,\n.bird-item .wrapper .introduction .english .content {\n  color: #666;\n}\n.bird-item .wrapper .introduction .latin .content {\n  font-style: italic;\n}\n.bird-item .wrapper .image {\n  float: left;\n  width: 80px;\n  height: 100%;\n}\n.bird-item .wrapper .image img {\n  width: 100%;\n  height: 100%;\n}\n", ""]);
+	exports.push([module.id, ".bird-item {\n  height: 80px;\n  border: none !important;\n  padding: 5px 10px !Important;\n}\n.bird-item .wrapper {\n  width: 100%;\n  height: 100%;\n  border: 2px solid #F4F4F4;\n  background-color: #fff;\n  -webkit-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  -moz-box-shadow: 0px 0px 15px 0px #f3f3f3;\n  box-shadow: 0px 0px 15px 0px #f3f3f3;\n}\n.bird-item .wrapper .introduction {\n  float: left;\n  width: calc(100% - 80px);\n  height: 100%;\n}\n.bird-item .wrapper .introduction .name {\n  font-size: 18px;\n  margin: 8px 0 3px 20px;\n  color: #1C92CC;\n  font-weight: 600;\n}\n.bird-item .wrapper .introduction .latin,\n.bird-item .wrapper .introduction .english {\n  font-size: 12px;\n  color: #999;\n  margin-left: 20px;\n  margin-bottom: 0;\n}\n.bird-item .wrapper .introduction .latin .content,\n.bird-item .wrapper .introduction .english .content {\n  color: #666;\n}\n.bird-item .wrapper .introduction .latin .content {\n  font-style: italic;\n}\n.bird-item .wrapper .image {\n  float: left;\n  width: 80px;\n  height: 100%;\n}\n.bird-item .wrapper .image img {\n  width: 100%;\n  height: 100%;\n}\n", ""]);
 
 	// exports
 

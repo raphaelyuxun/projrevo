@@ -15,18 +15,12 @@ export default class TopSearchBar extends React.Component {
   render() {
     return (
       <div data-role="header" data-position="fixed" className="top-search-bar">
-        <div className="search-group">
-          <div className="search-input-wrapper">
-            <input type="text"
-                   className="search-input"
-                   placeholder="在这里搜索鸟类"
-                   value={this.state.searchText}
-                   onChange={this.changeSearchText.bind(this)}/>
-          </div>
-          <div className="search-btn-wrapper">
-            <i className="fa fa-plus"></i>
-          </div>
-        </div>
+        <form className="ui-filterable search-box">
+          <input id="birdFilter" data-type="search"
+                 placeholder="在这里搜索鸟类"
+                 value={this.state.searchText}
+                 onChange={this.changeSearchText.bind(this)}/>
+        </form>
       </div>
     )
   }
