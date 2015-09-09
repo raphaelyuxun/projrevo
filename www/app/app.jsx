@@ -21,9 +21,11 @@ class App extends React.Component {
   render() {
     return  <div className="app">
               {/* several pages */}
+                <Home></Home>
+                {/*
                 <LoginPage></LoginPage>
                 <SignupPage></SignupPage>
-                <BirdPage></BirdPage>
+                <BirdPage></BirdPage> */}
             </div>
   }
 }

@@ -21,29 +21,33 @@ export default class Home extends React.Component {
 
   render() {
     let showTopSearchBar = this.state.showTopSearchBar
-    return <div className="home"
+    return <div data-role="page"
+                className="home"
                 onTouchMove={this.touchMove.bind(this)}
               >
-              {showTopSearchBar ?
-              <TopSearchBar> </TopSearchBar> : null}
-
-              <div className="birds-list">
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
-                <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+              <TopSearchBar> </TopSearchBar>
+              <div data-role="main" className="ui-content">
+{/*
+  {showTopSearchBar ?
+  <TopSearchBar> </TopSearchBar> : null}
+  */}
+                <div className="birds-list">
+                  <BirdItem chineseName="丹顶鹤" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤1" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤2" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤3" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤4" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤5" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤6" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤7" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤8" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤9" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤10" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤11" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤12" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                  <BirdItem chineseName="丹顶鹤13" latinName="Grus japonensis" englishName="Manchurian Crane" birdImage="1.jpg"></BirdItem>
+                </div>
               </div>
-
               <BottomNavBar selected="home"> </BottomNavBar>
            </div>
   }

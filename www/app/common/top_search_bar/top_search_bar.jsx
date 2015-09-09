@@ -14,7 +14,7 @@ export default class TopSearchBar extends React.Component {
 
   render() {
     return (
-      <div className="top-search-bar">
+      <div data-role="header" data-position="fixed" className="top-search-bar">
         <div className="search-group">
           <div className="search-input-wrapper">
             <input type="text"

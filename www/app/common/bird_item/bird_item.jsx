@@ -1,13 +1,8 @@
 import React from 'react'
-import Router from 'react-router'
 
 import './bird_item.less'
 
-let Navigation = Router.Navigation
-
 let BirdItem = React.createClass({
-  mixins: [Navigation],
-
   propTypes: {
     chineseName: React.PropTypes.string,
     latinName: React.PropTypes.string,
@@ -37,7 +32,7 @@ let BirdItem = React.createClass({
   },
 
   showDetails() {
-    this.transitionTo('bird', {englishName: this.props.englishName})
+    // this.transitionTo('bird', {englishName: this.props.englishName})
   }
 })
 

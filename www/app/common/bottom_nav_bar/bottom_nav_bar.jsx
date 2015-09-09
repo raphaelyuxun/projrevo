@@ -9,7 +9,7 @@ export default class BottomNavBar extends React.Component {
 
   render() {
     return (
-      <div className="bottom-navbar">
+      <div data-role="footer" data-position="fixed" className="bottom-navbar">
         <div className={'nav-btn ' + (this.props.selected === 'home' ? 'selected' : '')}>
           <i className="fa fa-book"></i>
         </div>
